@@ -1,0 +1,120 @@
+<h2>Add New Person</h2>
+<form (ngSubmit)="addPerson()" style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; gap: 10px;">
+            <div>
+                <label for="name">Name:</label>
+                <input id="name" [(ngModel)]="newPerson.name" name="name" required />
+            </div>
+
+            <div>
+                <label for="cpfNumber">CPF Number:</label>
+                <input id="cpfNumber" type="number" [(ngModel)]="newPerson.cpfNumber" name="cpfNumber" required />
+            </div>
+
+            <div>
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input id="dateOfBirth" [(ngModel)]="newPerson.dateOfBirth" name="dateOfBirth" type="date" required />
+            </div>
+
+            <div>
+                <label for="isActive">Status:</label>
+                <select id="isActive" [(ngModel)]="newPerson.isActive" name="isActive" required>
+                    <option [ngValue]="true">Active</option>
+                    <option [ngValue]="false">Inactive</option>
+                </select>
+            </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+            <button (click)="addPerson()" style="margin-top: 2rem;" type="submit">Add Person</button>
+        </div>
+    </div>
+</form>
+
+<h2>Persons List</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>CPF Number</th>
+            <th>Date of Birth</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons">
+            <td><input [(ngModel)]="person.name" name="personName{{person.id}}" /></td>
+            <td><input [disabled]="true" [(ngModel)]="person.cpfNumber" name="personCpfNumber{{person.id}}" /></td>
+            <td><input [(ngModel)]="person.dateOfBirth" name="personDateOfBirth{{person.id}}" type="date" /></td>
+            <td>
+                <select [(ngModel)]="person.isActive" name="personIsActive{{person.id}}">
+                    <option [ngValue]="true">Active</option>
+                    <option [ngValue]="false">Inactive</option>
+                </select>
+            </td>
+            <td>
+                <div style="justify-content: space-between;">
+                    <button (click)="savePerson(person)" title="Save">
+                        <i class="pi pi-save"></i>
+                    </button>
+                    <button (click)="deletePerson(person.id)" title="Delete">
+                        <i class="pi pi-trash"></i>
+                    </button>
+                    <button (click)="showContactModal(person)" title="Contacts">
+                        <i class="pi pi-book"></i>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="displayModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="hideContactModal()">&times;</span>
+        <h2>Add Contact</h2>
+        <div class="p-fluid">
+            <div class="p-field">
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" type="text" pInputText [(ngModel)]="phoneNumber" name="phoneNumber" />
+            </div>
+            <div class="p-field">
+                <label for="phoneType">Phone Type</label>
+                <select id="phoneType" [(ngModel)]="phoneType" name="phoneType">
+                    <option [ngValue]="0">Home</option>
+                    <option [ngValue]="1">Mobile</option>
+                    <option [ngValue]="2">Work</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" pButton label="Cancel" icon="pi pi-times" (click)="hideContactModal()"></button>
+                <button type="button" pButton label="Save" icon="pi pi-check" (click)="addContact()"></button>
+            </div>
+            <h2>Contact List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phone Number</th>
+                        <th>Phone Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let contact of contacts">
+                        <td>{{ contact.number }}</td>
+                        <td>
+                            <span *ngIf="contact.type === 0">Home</span>
+                            <span *ngIf="contact.type === 1">Mobile</span>
+                            <span *ngIf="contact.type === 2">Work</span>
+                        </td>
+                        <td>
+                            <button (click)="deleteContact(contact.id)" title="Delete">
+                                <i class="pi pi-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

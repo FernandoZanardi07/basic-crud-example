@@ -1,0 +1,18 @@
+{
+    "/api/auth": {
+        "target": "https://localhost:5189",
+        "secure": false,
+        "changeOrigin": true,
+        "agentOptions": {
+            "rejectUnauthorized": false
+        }
+    },
+    "/api/web": {
+        "target": "https://localhost:7101",
+        "secure": false,
+        "changeOrigin": true,
+        "agentOptions": {
+            "rejectUnauthorized": false
+        }
+    }
+}
