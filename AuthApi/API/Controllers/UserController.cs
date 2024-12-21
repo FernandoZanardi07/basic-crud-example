@@ -33,4 +33,11 @@ public class AuthController : ControllerBase
             }
         );
     }
+
+    [HttpPost("create")]
+    public async Task<ActionResult> Create([FromBody] UserLogin userLogin)
+    {
+        await _userApplicationService.CreateUser(userLogin);
+        return Ok();
+    }
 }

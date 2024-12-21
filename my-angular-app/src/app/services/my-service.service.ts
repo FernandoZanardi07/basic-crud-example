@@ -89,6 +89,14 @@ export class MyService {
       );
   }
 
+  getAuthStatus(): boolean {
+    return this.authService.getAuthenticationStatus();
+  }
+
+  logout(): void {
+    this.authService.logout();
+  }
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'Unknown error!';
     if (error.error instanceof ErrorEvent) {

@@ -2,6 +2,7 @@ using System.Reflection;
 using AuthApi.IOC;
 using Microsoft.AspNetCore.Authentication.BearerToken;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,10 +36,21 @@ builder.Services.AddDbContext<ContextDb>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AuthAPiConnection"),
         b => b.MigrationsAssembly("AuthApi")));
 
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var configurationOptions = ConfigurationOptions.Parse(builder.Configuration["ConnectionStrings:RedisConnectionString"]);
+
+    configurationOptions.AbortOnConnectFail = false;
+    configurationOptions.ConnectTimeout = 10000;
+    configurationOptions.SyncTimeout = 10000;
+    configurationOptions.AsyncTimeout = 10000;
+
+    return ConnectionMultiplexer.Connect(configurationOptions);
+});
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.ConfigureApplicationServices();
 builder.ConfigureServices();
-
 
 var app = builder.Build();
 
