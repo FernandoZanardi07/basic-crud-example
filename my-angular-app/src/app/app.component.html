@@ -1,7 +1,27 @@
 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-  <div style="display: flex; align-items: center;">
-    <h1>Person Manager</h1>
-    <!-- <button onclick="authenticate()" style="margin-left: 50px; background-color: rgb(166, 165, 165); color: black;">Authenticate</button> -->
+  <div *ngIf="isLogin; else personManager" class="modal">
+    <div style="margin-top: 7rem;">
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required [(ngModel)]="userLogin.Username" name="username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required [(ngModel)]="userLogin.Password" name="password">
+      </div>
+      <button type="submit" (click)="login()">Login</button>
+      <div style="margin-top: 2rem;">
+        <div *ngIf="errorMessage">
+          <p style="color: red;">{{ errorMessage }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <app-person-list></app-person-list>
+  <ng-template #personManager>
+    <div style="display: flex; align-items: center;">
+      <h1>Person Manager</h1>
+      <button style="margin-left: 10rem;background-color: red;" (click)="logout()">Logout</button>
+    </div>
+    <app-person-list></app-person-list>
+  </ng-template>
 </div>

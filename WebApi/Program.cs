@@ -1,30 +1,30 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using ExampleCrud.WebApi.Middleware;
 using FluentValidation.AspNetCore;
 using ExampleCrud.WebApi.IOC;
 using System.Reflection;
 using FluentValidation;
 using Serilog;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.Console()
     .CreateLogger();
-
 builder.Host.UseSerilog();
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder =>
+        policyBuilder =>
         {
-            builder.WithOrigins("http://localhost:4200")
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
+            policyBuilder.WithOrigins("http://localhost:4200")
+                         .AllowAnyMethod()
+                         .AllowAnyHeader();
         });
 });
 
@@ -72,12 +72,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSerilogRequestLogging();
-app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowSpecificOrigin");
 app.UsePathBase("/api");
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseMiddleware<ExceptionMiddleware>();
 app.MapControllers();
+
 app.Run();
