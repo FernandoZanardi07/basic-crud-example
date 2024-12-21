@@ -5,4 +5,5 @@ namespace AuthApi.Application.InterfaceApplicationService;
 public interface IUserApplicationService
 {
     Task<string> ValidateAndGetTolken(UserLogin userLogin);
+    Task CreateUser(UserLogin userDto);
 }

@@ -168,3 +168,7 @@ C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Works
 C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Projects\ExampleCrud\AuthApi\obj\Debug\net8.0\AuthApi.sourcelink.json
+C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\StackExchange.Redis.dll
+C:\Projects\ExampleCrud\AuthApi\bin\Debug\net8.0\BCrypt.Net-Next.dll

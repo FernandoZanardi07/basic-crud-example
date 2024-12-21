@@ -1,0 +1,806 @@
+2024-12-21 12:19:36.732 -03:00 [INF] User profile is available. Using 'C:\Users\fzana\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-21 12:19:36.952 -03:00 [INF] Now listening on: https://localhost:7101
+2024-12-21 12:19:36.956 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-21 12:19:36.957 -03:00 [INF] Hosting environment: Development
+2024-12-21 12:19:36.957 -03:00 [INF] Content root path: C:\Projects\ExampleCrud\WebApi
+2024-12-21 12:20:17.674 -03:00 [INF] Application is shutting down...
+2024-12-21 12:22:41.872 -03:00 [INF] User profile is available. Using 'C:\Users\fzana\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-21 12:22:42.088 -03:00 [INF] Now listening on: https://localhost:7101
+2024-12-21 12:22:42.094 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-21 12:22:42.096 -03:00 [INF] Hosting environment: Development
+2024-12-21 12:22:42.098 -03:00 [INF] Content root path: C:\Projects\ExampleCrud\WebApi
+2024-12-21 12:23:17.567 -03:00 [INF] Application is shutting down...
+2024-12-21 12:24:12.456 -03:00 [INF] User profile is available. Using 'C:\Users\fzana\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-21 12:24:12.607 -03:00 [INF] Now listening on: https://localhost:7101
+2024-12-21 12:24:12.611 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-21 12:24:12.613 -03:00 [INF] Hosting environment: Development
+2024-12-21 12:24:12.614 -03:00 [INF] Content root path: c:\Projects\ExampleCrud\WebApi
+2024-12-21 14:10:50.039 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:10:50.094 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:10:50.103 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 11.9228 ms
+2024-12-21 14:10:50.115 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 78.172ms
+2024-12-21 14:10:50.125 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:10:50.145 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:10:50.360 -03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '12/19/2024 4:32:00 PM', Current time (UTC): '12/21/2024 5:10:50 PM'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2024-12-21 14:10:50.394 -03:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '12/19/2024 4:32:00 PM', Current time (UTC): '12/21/2024 5:10:50 PM'.
+2024-12-21 14:10:50.403 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:10:50.434 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:10:52.235 -03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:10:52.325 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:10:52.510 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 2067.6815ms
+2024-12-21 14:10:52.514 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:10:52.517 -03:00 [INF] HTTP GET /api/person responded 200 in 2373.5129 ms
+2024-12-21 14:10:52.533 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 2408.5081ms
+2024-12-21 14:17:46.440 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:17:46.459 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:17:46.476 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:17:46.548 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:17:46.798 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:17:46.807 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:17:46.811 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 257.2443ms
+2024-12-21 14:17:46.814 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:17:46.816 -03:00 [INF] HTTP GET /api/person responded 200 in 357.9128 ms
+2024-12-21 14:17:46.821 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 380.4948ms
+2024-12-21 14:19:42.650 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:19:42.746 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:19:42.760 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:19:42.763 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:19:42.832 -03:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:19:42.837 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:19:42.843 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 73.2771ms
+2024-12-21 14:19:42.852 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:19:42.855 -03:00 [INF] HTTP GET /api/person responded 200 in 109.0522 ms
+2024-12-21 14:19:42.863 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 213.5716ms
+2024-12-21 14:19:44.486 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:19:44.498 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:19:44.503 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:19:44.506 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:19:44.524 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:19:44.533 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:19:44.539 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 18.8279ms
+2024-12-21 14:19:44.551 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:19:44.562 -03:00 [INF] HTTP GET /api/person responded 200 in 63.5245 ms
+2024-12-21 14:19:44.566 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 80.0054ms
+2024-12-21 14:22:33.542 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:22:33.571 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:22:33.574 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:22:33.584 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:22:33.611 -03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:22:33.620 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:22:33.625 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 33.9087ms
+2024-12-21 14:22:33.632 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:22:33.635 -03:00 [INF] HTTP GET /api/person responded 200 in 64.2396 ms
+2024-12-21 14:22:33.639 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 97.1922ms
+2024-12-21 14:27:04.848 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:27:05.072 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:27:05.128 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:27:05.138 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:27:05.202 -03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:27:05.211 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:27:05.220 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 48.5481ms
+2024-12-21 14:27:05.225 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:27:05.229 -03:00 [INF] HTTP GET /api/person responded 200 in 157.0792 ms
+2024-12-21 14:27:05.443 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 594.876ms
+2024-12-21 14:31:03.949 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:31:04.131 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:31:04.148 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:31:04.159 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:31:04.213 -03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:31:04.222 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:31:04.228 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 60.4301ms
+2024-12-21 14:31:04.232 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:31:04.235 -03:00 [INF] HTTP GET /api/person responded 200 in 104.5635 ms
+2024-12-21 14:31:04.246 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 297.3473ms
+2024-12-21 14:34:22.648 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:34:22.762 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:34:23.252 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:34:23.264 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:34:23.291 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:34:23.297 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:34:23.301 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 30.7841ms
+2024-12-21 14:34:23.304 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:34:23.312 -03:00 [INF] HTTP GET /api/person responded 200 in 550.3865 ms
+2024-12-21 14:34:23.316 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 668.3871ms
+2024-12-21 14:53:38.003 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:53:38.014 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:53:38.019 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:53:38.021 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:53:38.089 -03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:53:38.113 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:53:38.117 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 91.8855ms
+2024-12-21 14:53:38.120 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:53:38.123 -03:00 [INF] HTTP GET /api/person responded 200 in 108.8400 ms
+2024-12-21 14:53:38.127 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 123.7737ms
+2024-12-21 14:54:37.001 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:54:37.001 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:54:37.005 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:37.008 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:37.010 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 5.4119 ms
+2024-12-21 14:54:37.011 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 2.6632 ms
+2024-12-21 14:54:37.016 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 15.2051ms
+2024-12-21 14:54:37.019 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7101/api/person - application/json 80
+2024-12-21 14:54:37.019 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 18.0726ms
+2024-12-21 14:54:37.023 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7101/api/person - application/json 80
+2024-12-21 14:54:37.034 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:37.048 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:37.093 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:37.093 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:37.106 -03:00 [INF] Route matched with {action = "Post", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Post(ExampleCrud.WebApi.API.DTOs.Person) on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:54:37.106 -03:00 [INF] Route matched with {action = "Post", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Post(ExampleCrud.WebApi.API.DTOs.Person) on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:54:37.152 -03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-21 14:54:37.152 -03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-21 14:54:37.175 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi) in 63.7271ms
+2024-12-21 14:54:37.175 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi) in 59.5818ms
+2024-12-21 14:54:37.178 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:37.180 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:37.181 -03:00 [INF] HTTP POST /api/person responded 400 in 147.2955 ms
+2024-12-21 14:54:37.183 -03:00 [INF] HTTP POST /api/person responded 400 in 135.2974 ms
+2024-12-21 14:54:37.186 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7101/api/person - 400 null application/problem+json; charset=utf-8 167.1729ms
+2024-12-21 14:54:37.189 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7101/api/person - 400 null application/problem+json; charset=utf-8 166.5165ms
+2024-12-21 14:54:45.207 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:54:45.208 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:54:45.212 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:45.214 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:45.216 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 4.2895 ms
+2024-12-21 14:54:45.217 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 2.6815 ms
+2024-12-21 14:54:45.220 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 12.4565ms
+2024-12-21 14:54:45.222 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7101/api/person - application/json 80
+2024-12-21 14:54:45.223 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 14.6887ms
+2024-12-21 14:54:45.225 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7101/api/person - application/json 80
+2024-12-21 14:54:45.230 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:45.237 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:54:45.241 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:45.241 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:45.244 -03:00 [INF] Route matched with {action = "Post", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Post(ExampleCrud.WebApi.API.DTOs.Person) on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:54:45.245 -03:00 [INF] Route matched with {action = "Post", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Post(ExampleCrud.WebApi.API.DTOs.Person) on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:54:45.250 -03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-21 14:54:45.252 -03:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-12-21 14:54:45.253 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi) in 5.5241ms
+2024-12-21 14:54:45.257 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi) in 5.4697ms
+2024-12-21 14:54:45.259 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:45.261 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:54:45.264 -03:00 [INF] HTTP POST /api/person responded 400 in 33.3220 ms
+2024-12-21 14:54:45.265 -03:00 [INF] HTTP POST /api/person responded 400 in 27.9327 ms
+2024-12-21 14:54:45.268 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7101/api/person - 400 null application/problem+json; charset=utf-8 46.1973ms
+2024-12-21 14:54:45.271 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7101/api/person - 400 null application/problem+json; charset=utf-8 45.9832ms
+2024-12-21 14:55:22.064 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:55:22.066 -03:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7101/api/person - null null
+2024-12-21 14:55:22.069 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:55:22.073 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:55:22.075 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 5.4697 ms
+2024-12-21 14:55:22.076 -03:00 [INF] HTTP OPTIONS /api/person responded 204 in 2.9231 ms
+2024-12-21 14:55:22.079 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 15.3395ms
+2024-12-21 14:55:22.082 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7101/api/person - application/json 87
+2024-12-21 14:55:22.084 -03:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7101/api/person - 204 null null 17.5299ms
+2024-12-21 14:55:22.086 -03:00 [INF] Request starting HTTP/2 POST https://localhost:7101/api/person - application/json 87
+2024-12-21 14:55:22.095 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:55:22.106 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:55:22.109 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:55:22.111 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:55:22.113 -03:00 [INF] Route matched with {action = "Post", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Post(ExampleCrud.WebApi.API.DTOs.Person) on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:55:22.115 -03:00 [INF] Route matched with {action = "Post", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Post(ExampleCrud.WebApi.API.DTOs.Person) on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:55:22.253 -03:00 [INF] Executed DbCommand (26ms) [Parameters=[@__person_CpfNumber_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Person] AS [p]
+        WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[CpfNumber] = @__person_CpfNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-12-21 14:55:22.253 -03:00 [INF] Executed DbCommand (24ms) [Parameters=[@__person_CpfNumber_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Person] AS [p]
+        WHERE [p].[IsDeleted] = CAST(0 AS bit) AND [p].[CpfNumber] = @__person_CpfNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-12-21 14:55:22.410 -03:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-12-21 14:55:22.410 -03:00 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-12-21 14:55:22.421 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Id], [CpfNumber], [CreatedAt], [DateOfBirth], [DeletedAt], [IsActive], [IsDeleted], [Name], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-12-21 14:55:22.421 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int64), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Person] ([Id], [CpfNumber], [CreatedAt], [DateOfBirth], [DeletedAt], [IsActive], [IsDeleted], [Name], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-12-21 14:55:22.440 -03:00 [INF] Executing OkObjectResult, writing value of type 'ExampleCrud.WebApi.API.DTOs.Person'.
+2024-12-21 14:55:22.440 -03:00 [INF] Executing OkObjectResult, writing value of type 'ExampleCrud.WebApi.API.DTOs.Person'.
+2024-12-21 14:55:22.443 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi) in 320.9971ms
+2024-12-21 14:55:22.446 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi) in 328.1859ms
+2024-12-21 14:55:22.449 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:55:22.451 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Post (WebApi)'
+2024-12-21 14:55:22.452 -03:00 [INF] HTTP POST /api/person responded 200 in 346.2345 ms
+2024-12-21 14:55:22.453 -03:00 [INF] HTTP POST /api/person responded 200 in 358.4323 ms
+2024-12-21 14:55:22.456 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7101/api/person - 200 null application/json; charset=utf-8 370.1582ms
+2024-12-21 14:55:22.459 -03:00 [INF] Request finished HTTP/2 POST https://localhost:7101/api/person - 200 null application/json; charset=utf-8 376.553ms
+2024-12-21 14:55:22.461 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:55:22.477 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:55:22.479 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:55:22.480 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:55:22.489 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:55:22.494 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:55:22.496 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 12.7007ms
+2024-12-21 14:55:22.498 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:55:22.499 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:55:22.503 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:55:22.506 -03:00 [INF] HTTP GET /api/person responded 200 in 28.5879 ms
+2024-12-21 14:55:22.507 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:55:22.509 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 47.594ms
+2024-12-21 14:55:22.511 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:55:22.521 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:55:22.526 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:55:22.529 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 10.5151ms
+2024-12-21 14:55:22.531 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:55:22.533 -03:00 [INF] HTTP GET /api/person responded 200 in 29.4118 ms
+2024-12-21 14:55:22.535 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 37.3315ms
+2024-12-21 14:56:44.794 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:56:44.800 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:56:44.801 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:56:44.803 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:56:44.822 -03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:56:44.827 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:56:44.829 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 20.2785ms
+2024-12-21 14:56:44.831 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:56:44.833 -03:00 [INF] HTTP GET /api/person responded 200 in 33.5290 ms
+2024-12-21 14:56:44.837 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 42.2743ms
+2024-12-21 14:59:17.113 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 14:59:17.120 -03:00 [INF] CORS policy execution successful.
+2024-12-21 14:59:17.123 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:59:17.134 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:59:17.163 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:59:17.172 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:59:17.179 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 29.5301ms
+2024-12-21 14:59:17.181 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:59:17.186 -03:00 [INF] HTTP GET /api/person responded 200 in 66.2944 ms
+2024-12-21 14:59:17.198 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 84.9087ms
+2024-12-21 14:59:54.257 -03:00 [INF] Request starting HTTP/1.1 GET https://localhost:7101/api/person/ - null null
+2024-12-21 14:59:54.263 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:59:54.265 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 14:59:54.279 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 14:59:54.284 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 14:59:54.287 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 18.3213ms
+2024-12-21 14:59:54.289 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 14:59:54.291 -03:00 [INF] HTTP GET /api/person/ responded 200 in 28.3272 ms
+2024-12-21 14:59:54.294 -03:00 [INF] Request finished HTTP/1.1 GET https://localhost:7101/api/person/ - 200 null application/json; charset=utf-8 36.6064ms
+2024-12-21 15:01:38.435 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:01:38.440 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:01:38.441 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:01:38.444 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:01:38.472 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:01:38.478 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:01:38.482 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 29.3578ms
+2024-12-21 15:01:38.485 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:01:38.487 -03:00 [INF] HTTP GET /api/person responded 200 in 46.8445 ms
+2024-12-21 15:01:38.489 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 54.0767ms
+2024-12-21 15:01:48.878 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:01:48.885 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:01:48.887 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:01:48.889 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:01:48.896 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:01:48.903 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:01:48.907 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 12.8184ms
+2024-12-21 15:01:48.910 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:01:48.915 -03:00 [INF] HTTP GET /api/person responded 200 in 29.0472 ms
+2024-12-21 15:01:48.923 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 45.3879ms
+2024-12-21 15:05:03.195 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:05:03.199 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:05:03.200 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:05:03.202 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:05:03.240 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:05:03.245 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:05:03.251 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 45.0576ms
+2024-12-21 15:05:03.256 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:05:03.258 -03:00 [INF] HTTP GET /api/person responded 200 in 59.0897 ms
+2024-12-21 15:05:03.262 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 66.1945ms
+2024-12-21 15:07:10.602 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:07:10.608 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:07:10.609 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:07:10.611 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:07:10.630 -03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:07:10.637 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:07:10.641 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 26.7799ms
+2024-12-21 15:07:10.645 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:07:10.647 -03:00 [INF] HTTP GET /api/person responded 200 in 39.5489 ms
+2024-12-21 15:07:10.651 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 48.2054ms
+2024-12-21 15:08:08.912 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:08:08.916 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:08:08.918 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:08:08.920 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:08:08.945 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:08:08.952 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:08:08.955 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 29.034ms
+2024-12-21 15:08:08.959 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:08:08.961 -03:00 [INF] HTTP GET /api/person responded 200 in 45.0658 ms
+2024-12-21 15:08:08.964 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 52.5157ms
+2024-12-21 15:09:45.265 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:09:45.269 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:09:45.271 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:09:45.273 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:09:45.290 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:09:45.299 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:09:45.305 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 27.8648ms
+2024-12-21 15:09:45.311 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:09:45.314 -03:00 [INF] HTTP GET /api/person responded 200 in 44.9722 ms
+2024-12-21 15:09:45.318 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 52.4243ms
+2024-12-21 15:10:25.076 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:10:25.081 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:10:25.082 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:10:25.084 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:10:25.103 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:10:25.109 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:10:25.113 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 20.485ms
+2024-12-21 15:10:25.115 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:10:25.118 -03:00 [INF] HTTP GET /api/person responded 200 in 37.5780 ms
+2024-12-21 15:10:25.122 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 45.7782ms
+2024-12-21 15:11:34.629 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:11:34.633 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:11:34.634 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:11:34.636 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:11:34.653 -03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:11:34.659 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:11:34.665 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 23.9401ms
+2024-12-21 15:11:34.668 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:11:34.670 -03:00 [INF] HTTP GET /api/person responded 200 in 37.2066 ms
+2024-12-21 15:11:34.676 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 46.2065ms
+2024-12-21 15:11:45.436 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:11:45.440 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:11:45.442 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:11:45.444 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:11:45.452 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:11:45.462 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:11:45.468 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 19.026ms
+2024-12-21 15:11:45.470 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:11:45.473 -03:00 [INF] HTTP GET /api/person responded 200 in 33.0197 ms
+2024-12-21 15:11:45.477 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 41.5573ms
+2024-12-21 15:12:11.877 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:12:11.882 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:12:11.884 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:12:11.887 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:12:11.894 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:12:11.902 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:12:11.911 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 19.6742ms
+2024-12-21 15:12:11.916 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:12:11.919 -03:00 [INF] HTTP GET /api/person responded 200 in 36.3209 ms
+2024-12-21 15:12:11.922 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 45.0803ms
+2024-12-21 15:14:25.333 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:14:25.337 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:14:25.339 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:14:25.345 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:14:25.379 -03:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:14:25.388 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:14:25.392 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 32.5374ms
+2024-12-21 15:14:25.398 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:14:25.400 -03:00 [INF] HTTP GET /api/person responded 200 in 63.3536 ms
+2024-12-21 15:14:25.404 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 71.0047ms
+2024-12-21 15:15:17.244 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:15:17.248 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:15:17.249 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:15:17.251 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:15:17.267 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:15:17.273 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:15:17.277 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 22.3317ms
+2024-12-21 15:15:17.280 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:15:17.283 -03:00 [INF] HTTP GET /api/person responded 200 in 34.6805 ms
+2024-12-21 15:15:17.286 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 41.5796ms
+2024-12-21 15:15:27.571 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:15:27.575 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:15:27.577 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:15:27.579 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:15:27.588 -03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:15:27.593 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:15:27.595 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 12.4614ms
+2024-12-21 15:15:27.597 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:15:27.598 -03:00 [INF] HTTP GET /api/person responded 200 in 23.6013 ms
+2024-12-21 15:15:27.601 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 29.9962ms
+2024-12-21 15:15:29.266 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:15:29.269 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:15:29.270 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:15:29.272 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:15:29.277 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:15:29.282 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:15:29.284 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 8.0813ms
+2024-12-21 15:15:29.285 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:15:29.287 -03:00 [INF] HTTP GET /api/person responded 200 in 18.0660 ms
+2024-12-21 15:15:29.289 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 23.0858ms
+2024-12-21 15:18:30.487 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:18:30.492 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:18:30.494 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:18:30.496 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:18:30.529 -03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:18:30.537 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:18:30.542 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 40.7635ms
+2024-12-21 15:18:30.546 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:18:30.548 -03:00 [INF] HTTP GET /api/person responded 200 in 55.6376 ms
+2024-12-21 15:18:30.552 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 65.5062ms
+2024-12-21 15:20:48.162 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:20:48.169 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:20:48.171 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:20:48.173 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:20:48.205 -03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:20:48.211 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:20:48.214 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 35.6319ms
+2024-12-21 15:20:48.218 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:20:48.220 -03:00 [INF] HTTP GET /api/person responded 200 in 51.4297 ms
+2024-12-21 15:20:48.223 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 60.8134ms
+2024-12-21 15:21:19.814 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:21:19.819 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:21:19.821 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:21:19.823 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:21:19.861 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:21:19.866 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:21:19.869 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 39.1758ms
+2024-12-21 15:21:19.873 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:21:19.876 -03:00 [INF] HTTP GET /api/person responded 200 in 56.8834 ms
+2024-12-21 15:21:19.880 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 66.1131ms
+2024-12-21 15:22:06.398 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:22:06.402 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:22:06.403 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:22:06.405 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:22:06.414 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:22:06.418 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:22:06.420 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 7.9915ms
+2024-12-21 15:22:06.422 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:22:06.424 -03:00 [INF] HTTP GET /api/person responded 200 in 22.2378 ms
+2024-12-21 15:22:06.429 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 30.6417ms
+2024-12-21 15:22:09.322 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:22:09.325 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:22:09.326 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:22:09.328 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:22:09.335 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:22:09.339 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:22:09.342 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 8.7371ms
+2024-12-21 15:22:09.345 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:22:09.347 -03:00 [INF] HTTP GET /api/person responded 200 in 22.5909 ms
+2024-12-21 15:22:09.350 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 28.1776ms
+2024-12-21 15:23:35.366 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:23:35.370 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:23:35.371 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:23:35.374 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:23:35.406 -03:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:23:35.411 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:23:35.415 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 37.1367ms
+2024-12-21 15:23:35.417 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:23:35.420 -03:00 [INF] HTTP GET /api/person responded 200 in 50.2645 ms
+2024-12-21 15:23:35.424 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 58.4907ms
+2024-12-21 15:23:58.736 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:23:58.741 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:23:58.743 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:23:58.744 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:23:58.752 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:23:58.757 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:23:58.760 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 9.3529ms
+2024-12-21 15:23:58.765 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:23:58.767 -03:00 [INF] HTTP GET /api/person responded 200 in 26.2175 ms
+2024-12-21 15:23:58.771 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 34.9197ms
+2024-12-21 15:24:02.999 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:24:03.012 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:24:03.015 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:24:03.017 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:24:03.024 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:24:03.029 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:24:03.033 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 10.5723ms
+2024-12-21 15:24:03.035 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:24:03.038 -03:00 [INF] HTTP GET /api/person responded 200 in 25.4930 ms
+2024-12-21 15:24:03.041 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 41.9028ms
+2024-12-21 15:24:26.344 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:24:26.349 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:24:26.351 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:24:26.352 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:24:26.360 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:24:26.368 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:24:26.372 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 16.3431ms
+2024-12-21 15:24:26.377 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:24:26.379 -03:00 [INF] HTTP GET /api/person responded 200 in 29.7109 ms
+2024-12-21 15:24:26.384 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 40.223ms
+2024-12-21 15:24:42.067 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:24:42.071 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:24:42.073 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:24:42.075 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:24:42.089 -03:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:24:42.096 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:24:42.102 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 21.153ms
+2024-12-21 15:24:42.105 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:24:42.108 -03:00 [INF] HTTP GET /api/person responded 200 in 36.6811 ms
+2024-12-21 15:24:42.135 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 68.0788ms
+2024-12-21 15:27:24.309 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:27:24.313 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:27:24.316 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:27:24.318 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:27:24.342 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:27:24.347 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:27:24.351 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 29.9918ms
+2024-12-21 15:27:24.355 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:27:24.357 -03:00 [INF] HTTP GET /api/person responded 200 in 43.4484 ms
+2024-12-21 15:27:24.360 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 50.956ms
+2024-12-21 15:27:28.125 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:27:28.128 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:27:28.130 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:27:28.131 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:27:28.137 -03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:27:28.141 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:27:28.145 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 9.281ms
+2024-12-21 15:27:28.146 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:27:28.148 -03:00 [INF] HTTP GET /api/person responded 200 in 20.4563 ms
+2024-12-21 15:27:28.153 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 28.4875ms
+2024-12-21 15:28:17.362 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:28:17.368 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:28:17.371 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:28:17.373 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:28:17.406 -03:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:28:17.410 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:28:17.414 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 36.0638ms
+2024-12-21 15:28:17.417 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:28:17.420 -03:00 [INF] HTTP GET /api/person responded 200 in 51.8278 ms
+2024-12-21 15:28:17.424 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 61.8471ms
+2024-12-21 15:28:57.856 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:28:57.862 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:28:57.864 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:28:57.866 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:28:57.890 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:28:57.895 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:28:57.899 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 26.9734ms
+2024-12-21 15:28:57.903 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:28:57.909 -03:00 [INF] HTTP GET /api/person responded 200 in 46.8771 ms
+2024-12-21 15:28:57.913 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 57.2967ms
+2024-12-21 15:28:58.802 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:28:58.808 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:28:58.810 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:28:58.813 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:28:58.839 -03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:28:58.844 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:28:58.849 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 30.4249ms
+2024-12-21 15:28:58.852 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:28:58.855 -03:00 [INF] HTTP GET /api/person responded 200 in 46.3004 ms
+2024-12-21 15:28:58.859 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 57.0398ms
+2024-12-21 15:29:14.013 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:29:14.028 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:29:14.068 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:29:14.072 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:29:14.098 -03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:29:14.116 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:29:14.125 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 32.0435ms
+2024-12-21 15:29:14.127 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:29:14.129 -03:00 [INF] HTTP GET /api/person responded 200 in 101.8399 ms
+2024-12-21 15:29:14.134 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 120.922ms
+2024-12-21 15:29:20.695 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:29:20.794 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:29:20.798 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:29:20.803 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:29:20.829 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:29:20.841 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:29:20.845 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 31.0422ms
+2024-12-21 15:29:20.864 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:29:20.882 -03:00 [INF] HTTP GET /api/person responded 200 in 87.9371 ms
+2024-12-21 15:29:20.918 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 222.135ms
+2024-12-21 15:31:55.861 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:31:55.866 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:31:55.869 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:31:55.871 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:31:55.894 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:31:55.898 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:31:55.905 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 28.5769ms
+2024-12-21 15:31:55.909 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:31:55.911 -03:00 [INF] HTTP GET /api/person responded 200 in 44.4860 ms
+2024-12-21 15:31:55.915 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 53.7625ms
+2024-12-21 15:31:58.428 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:31:58.442 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:31:58.443 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:31:58.446 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:31:58.463 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:31:58.492 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:31:58.496 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 35.0979ms
+2024-12-21 15:31:58.499 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:31:58.509 -03:00 [INF] HTTP GET /api/person responded 200 in 66.8286 ms
+2024-12-21 15:31:58.540 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 112.1633ms
+2024-12-21 15:31:59.980 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:31:59.987 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:31:59.989 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:31:59.998 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:32:00.034 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:32:00.066 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:32:00.071 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 39.3828ms
+2024-12-21 15:32:00.077 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:32:00.079 -03:00 [INF] HTTP GET /api/person responded 200 in 92.5211 ms
+2024-12-21 15:32:00.083 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 103.7688ms
+2024-12-21 15:32:28.787 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:32:28.798 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:32:28.801 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:32:28.803 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:32:28.826 -03:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:32:28.831 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:32:28.834 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 25.2268ms
+2024-12-21 15:32:28.842 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:32:28.845 -03:00 [INF] HTTP GET /api/person responded 200 in 46.8848 ms
+2024-12-21 15:32:28.849 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 62.8369ms
+2024-12-21 15:34:47.553 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:34:47.564 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:34:47.569 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:34:47.572 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:34:47.593 -03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:34:47.601 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:34:47.605 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 24.3024ms
+2024-12-21 15:34:47.610 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:34:47.613 -03:00 [INF] HTTP GET /api/person responded 200 in 49.2557 ms
+2024-12-21 15:34:47.619 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 66.3579ms
+2024-12-21 15:36:18.103 -03:00 [INF] Application is shutting down...
+2024-12-21 15:38:09.887 -03:00 [INF] User profile is available. Using 'C:\Users\fzana\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-12-21 15:38:10.072 -03:00 [INF] Now listening on: https://localhost:7101
+2024-12-21 15:38:10.078 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-21 15:38:10.080 -03:00 [INF] Hosting environment: Development
+2024-12-21 15:38:10.082 -03:00 [INF] Content root path: C:\Projects\ExampleCrud\WebApi
+2024-12-21 15:38:50.208 -03:00 [INF] Request starting HTTP/2 GET https://localhost:7101/api/person - null null
+2024-12-21 15:38:50.247 -03:00 [INF] CORS policy execution successful.
+2024-12-21 15:38:50.271 -03:00 [INF] Executing endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:38:50.288 -03:00 [INF] Route matched with {action = "Get", controller = "Person"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Object] Get() on controller ExampleCrud.WebApi.API.Controllers.PersonController (WebApi).
+2024-12-21 15:38:51.887 -03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CpfNumber], [p].[CreatedAt], [p].[DateOfBirth], [p].[DeletedAt], [p].[IsActive], [p].[IsDeleted], [p].[Name], [p].[UpdatedAt]
+FROM [Person] AS [p]
+WHERE [p].[IsDeleted] = CAST(0 AS bit)
+2024-12-21 15:38:51.990 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Threading.Tasks.Task`1[[System.Collections.Generic.IEnumerable`1[[ExampleCrud.WebApi.API.DTOs.Person, WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-12-21 15:38:52.171 -03:00 [INF] Executed action ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi) in 1873.1193ms
+2024-12-21 15:38:52.177 -03:00 [INF] Executed endpoint 'ExampleCrud.WebApi.API.Controllers.PersonController.Get (WebApi)'
+2024-12-21 15:38:52.182 -03:00 [INF] HTTP GET /api/person responded 200 in 1936.0302 ms
+2024-12-21 15:38:52.230 -03:00 [INF] Request finished HTTP/2 GET https://localhost:7101/api/person - 200 null application/json; charset=utf-8 2020.6448ms

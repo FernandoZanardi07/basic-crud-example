@@ -8,7 +8,7 @@ import { MyService } from '../../services/my-service.service';
 })
 export class PersonListComponent implements OnInit {
     persons: any[] = [];
-    newPerson: any = { name: '', cpfNumber: '', dateOfBirth: '', isActive: true };
+    newPerson: any = { name: '', cpfNumber: '', dateOfBirth: Date, isActive: true };
     displayModal: boolean = false;
     phoneNumber: string = '';
     phoneType: number = 0;
@@ -20,20 +20,15 @@ export class PersonListComponent implements OnInit {
 
     ngOnInit(): void {
         this.loadPersons();
-        this.myService.getAuth({ Username: 'User', Password: 'pass' }).subscribe(
-            (data: any) => {
-                console.log('auth data:', data);
-            },
-            (error) => {
-                console.error('Error fetching auth', error);
-            }
-        );
     }
 
     loadPersons(): void {
         this.myService.getPersons().subscribe(
             (data: any) => {
-                this.persons = data.result;
+                this.persons = data.result.map((person: any) => {
+                    person.dateOfBirth = new Date(person.dateOfBirth).toISOString().split('T')[0];
+                    return person;
+                });
             },
             (error) => {
                 console.error('Error fetching persons', error);
@@ -85,7 +80,7 @@ export class PersonListComponent implements OnInit {
     }
 
     loadContacts(): void {
-        this.myService.getContactsByPersonId(this.selectedPersonId ).subscribe(
+        this.myService.getContactsByPersonId(this.selectedPersonId).subscribe(
             (data: any) => {
                 this.contacts = data;
                 this.displayModal = true;
@@ -103,7 +98,7 @@ export class PersonListComponent implements OnInit {
 
     addContact(): void {
         if (this.selectedPerson) {
-            this.myService.addContact(this.selectedPersonId, { number: this.phoneNumber ,type: this.phoneType}).subscribe(
+            this.myService.addContact(this.selectedPersonId, { number: this.phoneNumber, type: this.phoneType }).subscribe(
                 (data: any) => {
                     this.loadContacts();
                     this.phoneNumber = '';

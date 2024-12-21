@@ -8,7 +8,7 @@
             </div>
 
             <div>
-                <label for="cpfNumber">CPF Number:</label>
+                <label for="cpfNumber">CPF Number: </label>
                 <input id="cpfNumber" type="number" [(ngModel)]="newPerson.cpfNumber" name="cpfNumber" required />
             </div>
 
@@ -46,7 +46,7 @@
         <tr *ngFor="let person of persons">
             <td><input [(ngModel)]="person.name" name="personName{{person.id}}" /></td>
             <td><input [disabled]="true" [(ngModel)]="person.cpfNumber" name="personCpfNumber{{person.id}}" /></td>
-            <td><input [(ngModel)]="person.dateOfBirth" name="personDateOfBirth{{person.id}}" type="date" /></td>
+            <td><input [(ngModel)]="person.dateOfBirth" name="personDateOfBirth{{person.id}}" type="date" [value]="person.dateOfBirth | date:'MM-dd-yyyy'" /></td>
             <td>
                 <select [(ngModel)]="person.isActive" name="personIsActive{{person.id}}">
                     <option [ngValue]="true">Active</option>
@@ -118,3 +118,4 @@
             </table>
         </div>
     </div>
+</div>
