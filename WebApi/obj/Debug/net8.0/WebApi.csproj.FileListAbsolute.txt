@@ -188,6 +188,7 @@ C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\testhost.dll
 C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\xunit.abstractions.dll
 C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\testhost.exe
 C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\appsettings.Docker.json
 C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\appsettings.json
 C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\xunit.runner.visualstudio.testadapter.dll
 C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\WebApi.exe
@@ -455,3 +456,5 @@ C:\Projects\ExampleCrud\WebApi\obj\Debug\net8.0\refint\WebApi.dll
 C:\Projects\ExampleCrud\WebApi\obj\Debug\net8.0\WebApi.pdb
 C:\Projects\ExampleCrud\WebApi\obj\Debug\net8.0\WebApi.genruntimeconfig.cache
 C:\Projects\ExampleCrud\WebApi\obj\Debug\net8.0\ref\WebApi.dll
+C:\Projects\ExampleCrud\WebApi\bin\Debug\net8.0\WebApi.xml
+C:\Projects\ExampleCrud\WebApi\obj\Debug\net8.0\WebApi.xml

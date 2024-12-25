@@ -11,6 +11,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var env = builder.Environment;
+
+if (env.IsEnvironment("Docker"))
+    builder.Configuration.AddJsonFile("appsettings.Docker.json", optional: true, reloadOnChange: true);
+else
+    builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
 Log.Logger = new LoggerConfiguration()
     .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
     .WriteTo.Console()
@@ -67,6 +74,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -74,6 +82,7 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
+app.UseRouting();
 app.UseCors("AllowSpecificOrigin");
 app.UsePathBase("/api");
 app.UseAuthentication();

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:ExampleCrud.WebApi.API.Controllers.PersonController.Delete(System.Guid)">
+            <summary>
+            Default value for AuthenticationScheme property in the <see cref="!:BearerTokenOptions"/>.
+            </summary>
+        </member>
+        <member name="T:WebApi.Infrastructure.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApi.Infrastructure.Migrations.CreateContact">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.CreateContact.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.CreateContact.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.CreateContact.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebApi.Infrastructure.Migrations.ChangePersonCPFNumber">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.ChangePersonCPFNumber.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.ChangePersonCPFNumber.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebApi.Infrastructure.Migrations.ChangePersonCPFNumber.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
